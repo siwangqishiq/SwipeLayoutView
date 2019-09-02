@@ -4,39 +4,86 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
+    android:background="@color/colorPrimary"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <com.xinlan.swipelayoutview.SwipeMenuLayout
+    <com.xinlan.swipelayoutview.SwipeViewLayout
         android:id="@+id/swipe"
-        android:layout_marginTop="100dp"
-        android:layout_marginLeft="40dp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="80dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="100dp">
+
         <LinearLayout
+            android:id="@+id/mainView"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#77ff0000"
+            android:layout_height="match_parent"
+            android:background="#7700ff00"
             android:orientation="horizontal">
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
                 android:padding="15dp"
                 android:text="Hello World"
                 android:textSize="20sp" />
         </LinearLayout>
-        <TextView
+
+        <LinearLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="15dp"
-            android:text="Hello2222"
-            android:textSize="20sp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/btn1"
+                android:layout_width="120dp"
+                android:layout_height="match_parent"
+                android:background="#ff0000"
+                android:padding="15dp"
+                android:text="左滑出现"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/btn2"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="#ffff00"
+                android:padding="15dp"
+                android:text="左滑出现"
+                android:textSize="20sp" />
+        </LinearLayout>
+
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:id="@+id/btn3"
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:background="#0000ff"
             android:padding="15dp"
-            android:text="Hello33333"
+            android:text="右边出现"
             android:textSize="20sp" />
-    </com.xinlan.swipelayoutview.SwipeMenuLayout>
+    </com.xinlan.swipelayoutview.SwipeViewLayout>
+
+    <Button
+        android:id="@+id/openLeft"
+        android:text="openLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/openRight"
+        android:text="openRight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+    <Button
+        android:id="@+id/close"
+        android:text="close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
 
 </LinearLayout>
