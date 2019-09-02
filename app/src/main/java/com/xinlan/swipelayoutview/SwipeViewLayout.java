@@ -97,6 +97,8 @@ public class SwipeViewLayout extends ViewGroup {
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (Math.abs(mLastX - ev.getX()) >= mTouchSlop || isSwipe) {
+                    getParent().requestDisallowInterceptTouchEvent(true);
+
                     int dx = (int) (mLastX - ev.getX());
                     mLastX = ev.getX();
                     //scrollTo( dx, 0);
@@ -122,6 +124,7 @@ public class SwipeViewLayout extends ViewGroup {
                 swipScrollView();
                 result = false;
                 isSwipe = false;
+                getParent().requestDisallowInterceptTouchEvent(false);
                 //scrollTo(0,0);
                 break;
         }
@@ -156,6 +159,14 @@ public class SwipeViewLayout extends ViewGroup {
         mScroller.startScroll(getScrollX(), 0, -getScrollX(), 0); //复位
         mStatus = STATUS_CLOSE;
         postInvalidate();
+    }
+
+    /**
+     * 无动画的关闭
+     */
+    public void closeViewInstant(){
+        mStatus = STATUS_CLOSE;
+        scrollTo(0 ,0 );
     }
 
     @Override
